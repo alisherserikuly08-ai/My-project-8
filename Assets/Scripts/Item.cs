@@ -1,6 +1,5 @@
 using UnityEngine;
 
-// Coffee = +1 dash, otherwise Folder = +1 throw.
 public class Item : MonoBehaviour
 {
     public bool coffee;
