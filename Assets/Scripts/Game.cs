@@ -43,7 +43,7 @@ public class Game : MonoBehaviour
     {
         var k = Keyboard.current;
         if (!over && !won && player.transform.position.y < spawns[floor - 1].position.y - 8) player.Die();
-        if (over && (Time.time > restartAt || (k != null && k.rKey.wasPressedThisFrame))) Restart();
+        if (over && (Time.time > restartAt || (k != null && k.rKey.wasPressedThisFrame)))Restart();
         if (won && k != null && k.rKey.wasPressedThisFrame) Restart();
     }
 
