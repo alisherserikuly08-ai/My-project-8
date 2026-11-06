@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-// Floors, camera follow, HUD, Game Over + fast restart (restarts on the current floor).
 public class Game : MonoBehaviour
 {
     public static Game I;
@@ -10,8 +9,8 @@ public class Game : MonoBehaviour
 
     public Player player;
     public Guard[] guards;
-    public Transform[] spawns;   // start point of each floor
-    public float[] lengths;      // run length of each floor (for distance bar)
+    public Transform[] spawns;
+    public float[] lengths;
     public float restartDelay = 0.7f, camHeight = 4.2f;
 
     int floor = 1;
@@ -58,7 +57,7 @@ public class Game : MonoBehaviour
 
     void OnGUI()
     {
-        // HUD sits on the black ceiling band: white text, white bar (pure B&W)
+
         var s = new GUIStyle(GUI.skin.label) { fontSize = 26, fontStyle = FontStyle.Bold };
         s.normal.textColor = Color.white;
         var box = Texture2D.whiteTexture;
@@ -73,7 +72,7 @@ public class Game : MonoBehaviour
         s.fontSize = 20;
         GUI.Label(new Rect(Screen.width - 330, 16, 310, 40), "COFFEE x" + player.coffee + "    FOLDERS x" + player.folders, s);
 
-        // Distance bar (progress through the floor)
+
         float t = Mathf.Clamp01((player.transform.position.x - spawns[floor - 1].position.x) / lengths[floor - 1]);
         var bar = new Rect(26, 52, 320, 10);
         GUI.color = Color.white; GUI.DrawTexture(bar, box);
