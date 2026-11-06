@@ -1,6 +1,5 @@
 using UnityEngine;
 
-// Thrown folder: flies backwards (left), pushes a Guard back, dies on walls.
 public class Folder : MonoBehaviour
 {
     public float speed = 15f;
