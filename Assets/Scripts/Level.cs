@@ -1,6 +1,5 @@
 using UnityEngine;
 
-// Elevator: touching it sends the player to the next floor (11 = escaped).
 public class Level : MonoBehaviour
 {
     public int nextFloor = 2;
